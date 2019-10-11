@@ -1,5 +1,5 @@
 # ScreenMin
-R code to accompany Djordjilovic et al. (2019)
+R code to accompany Djordjilović et al. (2019)
 1. **ScreenMinBonf.R** Two step multiple testing procedure, ScreenMin, for controlling familywise error rate while testing multiple mediators. 
 2. **CoreScreenMin.R** Core functions for the power analysis of  ScreenMin.
 3. **ConstrainedOptimizationThreshold.R** Oracle power maximizing threshold for the ScreenMin with an example.
