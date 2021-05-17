@@ -131,6 +131,17 @@ threshold <- FpControl(p1, p2, 1)
 ind_pfer <- which(pmax(p1, p2) <= threshold)
 pval_adjusted <- maxp[ind_pfer] * sum(minp <= threshold)
 
+
+#### Table for the manuscript
+ind_pref <- c(2687, 2688, 5437,12652, 17925, 21169, 28554, 28597)
+tab1 <- cbind(GWASDrops$GWAResult$Mur13W[ind_pfer,c("snp", "chr", "effect", "effectSe")],
+              GWASDrops$GWAResult$Kar13W[ind_pfer,c("effect", "effectSe")],
+              maxp[ind_pfer])
+
+require(xtable)
+print(xtable(tab1, digits=c(1,1,1,2,2, 2,2,-1), display = c("d","s","d","f","f","f","f", "d")), math.style.exponents = TRUE)
+
+
 ### HDMT analysis (not reported in the manuscript)
 require(HDMT)
 nullprop <- null_estimation(cbind(p1, p2), lambda = 0.9)
